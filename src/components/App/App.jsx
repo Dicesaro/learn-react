@@ -1,23 +1,24 @@
+import styles from "./App.module.css";
 import { useState } from "react";
-import "../../css/normalice.css";
-import "./App.css";
+import { Users } from "../Users/Users";
 
 const App = ({ value }) => {
-  const [contador, setContador] = useState(value);
+  // const [contador, setContador] = useState(value);
 
-  const handlePlus = () => setContador(contador + 1);
-  const handleMinus = () => setContador(contador - 1);
+  // const handlePlus = () => setContador(contador + 1);
+  // const handleMinus = () => setContador(contador - 1);
 
   return (
     <>
-      <section>
+      {/* <section className={styles.timing}>
         <h1>Mi contador hecho con React:</h1>
         <p>{contador}</p>
-        <div className="buttons">
+        <div className={styles.buttons}>
           <button onClick={handlePlus}>+1</button>
           <button onClick={handleMinus}>- 1</button>
         </div>
-      </section>
+      </section> */}
+      <Users />
     </>
   );
 };
