@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../src/output.css";
+import AgregarTarea from "./AgregarTarea";
 
 const Items = ({ nombre, visto }) => {
   return (
@@ -20,20 +21,17 @@ const Listado = () => {
     { nombre: "JSX", visto: false },
     { nombre: "TAILWIND", visto: true },
   ];
-  const [arreglo, setarreglo] = useState(listadoSecciones);
+  const [arreglo, setArreglo] = useState(listadoSecciones);
 
-  const addTask = () => {
-    setarreglo([...arreglo, { nombre: "Nueva Tarea", visto: false }]);
-  };
   return (
     <>
       <h1 className="font-bold text-3xl px-20 py-10">Listado de Temas</h1>
+      <AgregarTarea agregarTarea={setArreglo} />
       <ol className="font-medium text-4xl p-20 ">
         {arreglo.map((item) => (
           <Items key={item.nombre} nombre={item.nombre} visto={item.visto} />
         ))}
       </ol>
-      <button onClick={() => addTask()}>Adding Task</button>
     </>
   );
 };
